@@ -2,10 +2,12 @@ from rest_framework.serializers import ModelSerializer
 from comentarios.models import Comentario
 
 class ComentarioSerializer(ModelSerializer):
-    model: Comentario
-    fields: (
-        'id',
-        'comentario',
-        'data',
-        'aprovado'
-    )
+    class Meta:
+        model = Comentario
+        fields = (
+            'id',
+            'usuario',
+            'comentario',
+            'data',
+            'aprovado'
+        )
